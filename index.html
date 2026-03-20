@@ -1,0 +1,74 @@
+<html>
+<canvas style="position: absolute; bottom: 0px;" class="zdog-canvas" width="240" height="240"></canvas>
+<img style="width: 25%; display: block;
+                 margin-left: auto;
+                 margin-right: auto;
+                 position: absolute;
+                " src="bunda(1).gif"><br>
+                <img style="width: 25%; display: block;
+                 margin-left: auto;
+                 margin-right: auto;
+                 position: absolute;
+                 top: 0px;
+                 right: 0px;
+                " src="artist.png">
+                 <img id="walkman" style="width: 25%; display: block;
+                 margin-left: auto;
+                 margin-right: auto;
+                 position: absolute;
+                 bottom: 0px;
+                 right: 0px;
+                " src="sony.png">
+                
+
+
+    <script src="https://unpkg.com/zdog@1/dist/zdog.dist.min.js"></script>
+    <script src="https://unpkg.com/hydra-synth"></script>
+    <script>
+  const hydra = new Hydra({ detectAudio: false });
+
+osc(40, 0.1, 0).color(0, 1, 2).rotate(1.57/2).out(o1)
+osc(40, 0.01, 0).color(2, 0.7, 1).modulate(o1, 0).add(o1,1).modulatePixelate(o1,1,10).out(o0)
+
+        let illo = new Zdog.Illustration({
+  // set canvas with selector
+  element: '.zdog-canvas',
+});
+
+// add circle
+new Zdog.Ellipse({
+  addTo: illo,
+  diameter: 80,
+  stroke: 20,
+  color: '#FF004D',
+});
+
+
+illo.updateRenderGraph();
+
+function animate() {
+
+  illo.rotate.y += 0.03;
+  illo.updateRenderGraph();
+
+  requestAnimationFrame( animate );
+}
+
+animate();
+
+window.scrollTo(0, 50);
+document.body.style.overflow = 'hidden';
+
+const img = document.getElementById('walkman');
+document.addEventListener('mousemove', e => {
+  img.style.transform = `translate(${e.clientX * 0.02}px, ${e.clientY * 0.02}px)`;
+});
+    </script>
+    <style>
+        body {
+            background-color: #FF004D;
+            
+       
+        }
+    </style>
+</html>
