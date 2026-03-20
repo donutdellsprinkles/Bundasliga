@@ -1,2 +1,2 @@
 # Bundasliga
-Local website for self hosted haxball league 
+Local website for self hosted haxball league .
