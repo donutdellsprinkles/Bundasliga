@@ -1,0 +1,147 @@
+<html>
+    <head>
+        <title>BUNDASLIGA™ CARDS™™™™™</title>
+    </head>
+    <!-- <div class="header"><h1>CARDS</h1></div> Idk just looks really ugly might edit it later sometime. -->
+    <div class="content">
+       <a href="modidyouh.html" class="card-container">
+  <img src="modidyouh.png" alt="Focus Card" class="tilt-card" style="--depth: #d9d12f;" />
+</a>
+    </div>
+<style>
+    body {
+        background-color: #cf5641;
+        padding: 10%;
+    }
+    body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+  
+    
+    background-image: url("hr.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    
+    filter: blur(12px);
+    opacity: 0.4;
+    
+    
+    z-index: -1;
+    
+    
+    transform: scale(1.05);
+    }
+    .header {
+        background-color: aqua;
+        padding-top: 20px;
+        width: 100%;
+        clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 95% 85%, 90% 80%, 85% 85%, 80% 80%, 75% 85%, 70% 80%, 65% 85%, 60% 80%, 55% 85%, 50% 80%, 45% 85%, 40% 80%, 35% 85%, 30% 80%, 25% 85%, 20% 80%, 15% 85%, 10% 80%, 5% 85%, 0% 80%);
+    }
+    h1 {
+        text-align: center;
+    }
+ 
+  .card-container {
+    display: inline-block;
+    perspective: 1750px;
+    text-decoration: none;
+  }
+
+  
+  .tilt-card {
+    --depth: white; 
+    display: block;
+    width: 250px; 
+    height: auto;
+    border-radius: 12px;
+    transition: transform 0.1s ease-out, filter 0.1s ease-out;
+    will-change: transform, filter;
+    image-rendering: pixelated;
+  }
+</style>
+<script>
+  (() => {
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const cardContainers = document.querySelectorAll('.card-container');
+    const MAX_ROTATION = 15;
+    
+    let hoverController = null;
+
+   
+    function mapRange(number, inMin, inMax, outMin, outMax) {
+      return ((number - inMin) * (outMax - outMin)) / (inMax - inMin) + outMin;
+    }
+
+    function enableHoverEffect() {
+      if (hoverController) return;
+      
+     
+      hoverController = new AbortController();
+      const { signal } = hoverController;
+
+      cardContainers.forEach(container => {
+        const card = container.querySelector('.tilt-card');
+        if (!card) return;
+
+        container.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+          
+          const rotateY = ((x - centerX) / centerX) * MAX_ROTATION;
+          const rotateX = ((centerY - y) / centerY) * MAX_ROTATION;
+          
+          const brightness = mapRange(rotateX - rotateY, -MAX_ROTATION * 2, MAX_ROTATION * 2, 0.85, 1.15);
+
+          card.style.transform = `rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) scale3d(1.05, 1.05, 1.05)`;
+          card.style.filter = `drop-shadow(${-rotateY * 0.33}px ${rotateX * 0.33}px 0px var(--depth)) brightness(${brightness.toFixed(2)})`;
+        }, { signal });
+
+        container.addEventListener('mouseleave', () => {
+          card.style.transform = 'rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+          card.style.filter = 'none';
+        }, { signal });
+      });
+    }
+
+    function disableHoverEffect() {
+      if (!hoverController) return;
+      
+      
+      hoverController.abort();
+      hoverController = null;
+
+      cardContainers.forEach(container => {
+        const card = container.querySelector('.tilt-card');
+        if (card) {
+          card.style.transform = 'rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+          card.style.filter = 'none';
+        }
+      });
+    }
+
+    
+    if (!prefersReducedMotion.matches) {
+      enableHoverEffect();
+    }
+
+    
+    prefersReducedMotion.addEventListener("change", (e) => {
+      if (e.matches) {
+        disableHoverEffect();
+      } else {
+        enableHoverEffect();
+      }
+    });
+  })();
+</script>
+</html>
