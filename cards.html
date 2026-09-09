@@ -1,147 +1,145 @@
 <html>
-    <head>
-        <title>BUNDASLIGA™ CARDS™™™™™</title>
-    </head>
-    <!-- <div class="header"><h1>CARDS</h1></div> Idk just looks really ugly might edit it later sometime. -->
-    <div class="content">
-       <a href="modidyouh.html" class="card-container">
-  <img src="modidyouh.png" alt="Focus Card" class="tilt-card" style="--depth: #d9d12f;" />
-</a>
+<head>
+  <meta charset="UTF-8">
+  <title>ABOOD CARD</title>
+</head>
+<body>
+  <div class="card-container">
+    <div id="left">
+      <h1>Abood</h1>
+      <h2>Hax Name: Aboodinho</h2>
+      <h2>Current Team: FC العادة السرية</h2>
+      <h2>Hax Age: 22</h2>
+      <h2>Hax Nationality: Mozambique</h2> <br>
+      <h2>Trophies & Awards:</h2>
+      <h2 style="font-family: 'Courier New', Courier, monospace; font-size: 15px;">● Nothing of Note As of Now.</h2> <br>
+      <h2>Bio:</h2>
+      <h2 style="font-family: 'Courier New', Courier, monospace; font-size: 15px;">●Coming straight from Hamriya Oman, Abood entered the Hax scene with many weak 
+        performances and was often called one of the most disappointing new Hax players, Abood quickly did a 180 by adapting Controller™ Tech and has left the entire league in awe 
+        of his capabilities.
+      </h2>
+       <br> <h2>Innate Hax skills:</h2>
+        <h2 style="font-family: 'Courier New', Courier, monospace; font-size: 15px;">First Touch: ★★★★★</h2>
+        <h2 style="font-family: 'Courier New', Courier, monospace; font-size: 15px;">Hax IQ: ★★★★</h2>
+        <h2 style="font-family: 'Courier New', Courier, monospace; font-size: 15px;">Adaptation: ★★★★</h2>
+        <h2 style="font-family: 'Courier New', Courier, monospace; font-size: 15px;">Mentality: ★★★★★</h2>
+        <h2 style="font-family: 'Courier New', Courier, monospace; font-size: 15px;">Team Chemistry: ★★★★★</h2>
+        <br>
+        <h2>Stats:</h2>
+        <h2 style="font-family: 'Courier New', Courier, monospace; font-size: 15px;">Goals: 12</h2>
+        <h2 style="font-family: 'Courier New', Courier, monospace; font-size: 15px;">Assists: 4</h2>
+        <h2 style="font-family: 'Courier New', Courier, monospace; font-size: 15px;">Saves: 1</h2>
     </div>
-<style>
+
+    <div id="right">
+      <h1>TRANSFER VALUE:</h1>
+      <img class="card-img" src="aboodMV.png.jpg" alt="Player Transfer Value">
+      <h2>Value: $91M</h2>
+        <br>
+      <h1>RATINGS:</h1>
+      <h2>
+        SHOOTING: 90 <br>
+        POSITIONING: 88 <br>
+        PASSING: 89 <br>
+        BALL CONTROL: 87 <br>
+        DEFENCE: 86 <br>
+        COMPOSURE: 90 <br>
+        DISRUPTION: 84
+      </h2>
+      <h2 class="ovr-stat">OVR: 89</h2>
+    </div>
+  </div>
+  <style>
+    @font-face {
+      font-family: comic;
+      src: url(comic.otf);
+    }
+    @font-face {
+      font-family: mountain;
+      src: url(mountain.otf);
+    }
+    @font-face {
+      font-family: Arab;
+      src: url(ArabDances.ttf);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
-        background-color: #cf5641;
-        padding: 10%;
+      background-color: #05203a; 
+      font-family: comic, sans-serif;
+      min-height: 100vh;
     }
-    body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
+
   
-    
-    background-image: url("hr.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    
-    
-    filter: blur(12px);
-    opacity: 0.4;
-    
-    
-    z-index: -1;
-    
-    
-    transform: scale(1.05);
+    .card-container {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      min-height: 100vh; 
+      align-items: stretch; 
     }
-    .header {
-        background-color: aqua;
-        padding-top: 20px;
-        width: 100%;
-        clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 95% 85%, 90% 80%, 85% 85%, 80% 80%, 75% 85%, 70% 80%, 65% 85%, 60% 80%, 55% 85%, 50% 80%, 45% 85%, 40% 80%, 35% 85%, 30% 80%, 25% 85%, 20% 80%, 15% 85%, 10% 80%, 5% 85%, 0% 80%);
+
+    #left {
+      width: 30%;
+      background-color: #f2803d;
+      padding: 20px;
     }
+
+    #right {
+      width: 70%;
+      background-color: #05203a;
+      padding: 20px;
+    }
+
+    
+    .card-img {
+      width: 23%;
+      display: block;
+      margin: 10px auto;
+    }
+
+    
     h1 {
-        text-align: center;
-    }
- 
-  .card-container {
-    display: inline-block;
-    perspective: 1750px;
-    text-decoration: none;
-  }
-
-  
-  .tilt-card {
-    --depth: white; 
-    display: block;
-    width: 250px; 
-    height: auto;
-    border-radius: 12px;
-    transition: transform 0.1s ease-out, filter 0.1s ease-out;
-    will-change: transform, filter;
-    image-rendering: pixelated;
-  }
-</style>
-<script>
-  (() => {
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const cardContainers = document.querySelectorAll('.card-container');
-    const MAX_ROTATION = 15;
-    
-    let hoverController = null;
-
-   
-    function mapRange(number, inMin, inMax, outMin, outMax) {
-      return ((number - inMin) * (outMax - outMin)) / (inMax - inMin) + outMin;
+      color: #d3d3d3;
+      font-family: Arab, sans-serif;
+      text-align: center;
+      font-size: 70px;
     }
 
-    function enableHoverEffect() {
-      if (hoverController) return;
-      
-     
-      hoverController = new AbortController();
-      const { signal } = hoverController;
-
-      cardContainers.forEach(container => {
-        const card = container.querySelector('.tilt-card');
-        if (!card) return;
-
-        container.addEventListener('mousemove', (e) => {
-          const rect = card.getBoundingClientRect();
-          const x = e.clientX - rect.left;
-          const y = e.clientY - rect.top;
-          
-          const centerX = rect.width / 2;
-          const centerY = rect.height / 2;
-          
-          const rotateY = ((x - centerX) / centerX) * MAX_ROTATION;
-          const rotateX = ((centerY - y) / centerY) * MAX_ROTATION;
-          
-          const brightness = mapRange(rotateX - rotateY, -MAX_ROTATION * 2, MAX_ROTATION * 2, 0.85, 1.15);
-
-          card.style.transform = `rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) scale3d(1.05, 1.05, 1.05)`;
-          card.style.filter = `drop-shadow(${-rotateY * 0.33}px ${rotateX * 0.33}px 0px var(--depth)) brightness(${brightness.toFixed(2)})`;
-        }, { signal });
-
-        container.addEventListener('mouseleave', () => {
-          card.style.transform = 'rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
-          card.style.filter = 'none';
-        }, { signal });
-      });
+    h2 {
+      font-family: comic, sans-serif;
+      color: #d3d3d3;
+      text-align: center;
+      font-size: 30px;
+      line-height: 1.4;
     }
 
-    function disableHoverEffect() {
-      if (!hoverController) return;
-      
-      
-      hoverController.abort();
-      hoverController = null;
-
-      cardContainers.forEach(container => {
-        const card = container.querySelector('.tilt-card');
-        if (card) {
-          card.style.transform = 'rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
-          card.style.filter = 'none';
-        }
-      });
+    p {
+      color: #f2803d;
+      font-family: comic, sans-serif;
+      text-align: center;
+      font-size: 25px;
+      font-weight: bolder;
     }
 
-    
-    if (!prefersReducedMotion.matches) {
-      enableHoverEffect();
+    hr {
+      background-color: #f2803d;
+      height: 1px;
+      border: none;
+      width: 50%;
+      margin: 15px auto;
     }
 
-    
-    prefersReducedMotion.addEventListener("change", (e) => {
-      if (e.matches) {
-        disableHoverEffect();
-      } else {
-        enableHoverEffect();
-      }
-    });
-  })();
-</script>
+    .ovr-stat {
+      font-size: 40px;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+  </style>
+</body>
 </html>
