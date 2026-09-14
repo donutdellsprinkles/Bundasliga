@@ -1,0 +1,181 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ALI CARD</title>
+</head>
+<body>
+  <div class="card-container">
+    <div id="left">
+      <h1>Ali</h1>
+      <h2>Hax Name: Alipro7896</h2>
+      <h2>Current Team: ZIZO FC</h2>
+      <h2>Hax Age: 39</h2>
+      <h2>Hax Nationality: Djibouti</h2> <br>
+      <h2>Trophies & Awards:</h2>
+      <div style="padding-left: 5vh;">
+        <img  src="cup.png" onclick="alert('2025 Gluteus Maximus Cup');" style="cursor: pointer; margin: 3vh;">
+       <img src="cup.png " onclick="alert('2026 Gluteus Maximus Cup');" style="cursor: pointer; margin: 3vh;" >
+       <img src="league.png" onclick="alert('2026 Bundasliga Cup');" style="cursor: pointer; margin: 3vh;" >
+       <img  src="goldenglove.png" onclick="alert('Golden Glove - SEASON 1');" style="cursor: pointer; margin: 3vh;">
+       <img src="goldenglove.png" onclick="alert('Golden Glove - SEASON 2');" style="cursor: pointer; margin: 3vh;" >
+       <img src="goldenglove.png" onclick="alert('Golden Glove - PRESEASON CUP 1');" style="cursor: pointer; margin: 3vh;" >
+       <img src="goldenball.png" onclick="alert('MOST ASSISTS - SEASON 2');" style="cursor: pointer; margin: 3vh;" >
+       <img src="goldenball.png" onclick="alert('MOST ASSISTS - PRESEASON CUP 1');" style="cursor: pointer; margin: 3vh;" >
+       
+      </div>
+      <h2>Bio:</h2>
+      <h2 style="font-family: 'Courier New', Courier, monospace; font-size: 15px;">●<button class="playPauseButton" data-audio-id="audioPlayer1"><h3>▶︎</h3></button></h3>
+                <audio id="audioPlayer1" src="khairat.mp3"></audio>
+      </h2>
+       <br> <h2>Innate Hax skills:</h2>
+        <h2 style="font-family: 'Courier New', Courier, monospace; font-size: 15px;">First Touch: ★★★★★</h2>
+        <h2 style="font-family: 'Courier New', Courier, monospace; font-size: 15px;">Hax IQ: ★★★★★</h2>
+        <h2 style="font-family: 'Courier New', Courier, monospace; font-size: 15px;">Adaptation: ★★★★★</h2>
+        <h2 style="font-family: 'Courier New', Courier, monospace; font-size: 15px;">Mentality: ★★★★★</h2>
+        <h2 style="font-family: 'Courier New', Courier, monospace; font-size: 15px;">Team Chemistry: ★★★★★</h2>
+        <br>
+        <h2>Stats:</h2>
+        <h2 style="font-family: 'Courier New', Courier, monospace; font-size: 15px;">Goals: 21</h2>
+        <h2 style="font-family: 'Courier New', Courier, monospace; font-size: 15px;">Assists: 22</h2>
+        <h2 style="font-family: 'Courier New', Courier, monospace; font-size: 15px;">Saves: 36</h2>
+    </div>
+
+    <div id="right">
+      <h1>TRANSFER VALUE:</h1>
+      <img class="card-img" src="AliMV.jpg" alt="Player Transfer Value">
+      <h2>Value: $244M</h2>
+        <br>
+      <h1>RATINGS:</h1>
+      <h2>
+        SHOOTING: 91 <br>
+        POSITIONING: 95 <br>
+        PASSING: 97 <br>
+        BALL CONTROL: 97 <br>
+        DEFENCE: 97 <br>
+        COMPOSURE: 95 <br>
+        DISRUPTION: 92
+      </h2>
+      <h2 class="ovr-stat">OVR: 94</h2>
+    </div>
+  </div>
+  <style>
+     button {
+            background-color: transparent;
+            outline:cyan;
+            cursor: pointer;
+            border:dotted;
+        }
+    @font-face {
+      font-family: comic;
+      src: url(comic.otf);
+    }
+    @font-face {
+      font-family: mountain;
+      src: url(mountain.otf);
+    }
+    @font-face {
+      font-family: Arab;
+      src: url(ArabDances.ttf);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #05203a; 
+      font-family: comic, sans-serif;
+      min-height: 100vh;
+    }
+
+  
+    .card-container {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      min-height: 100vh; 
+      align-items: stretch; 
+    }
+
+    #left {
+      width: 30%;
+      background-color: #F88379;
+      padding: 20px;
+    }
+
+    #right {
+      width: 70%;
+      background-color: #1D2026;
+      padding: 20px;
+    }
+
+    
+    .card-img {
+      width: 23%;
+      display: block;
+      margin: 10px auto;
+    }
+
+    
+    h1 {
+      color: #d3d3d3;
+      font-family: Arab, sans-serif;
+      text-align: center;
+      font-size: 70px;
+    }
+
+    h2 {
+      font-family: comic, sans-serif;
+      color: #d3d3d3;
+      text-align: center;
+      font-size: 30px;
+      line-height: 1.4;
+    }
+
+    p {
+      color: #f2803d;
+      font-family: comic, sans-serif;
+      text-align: center;
+      font-size: 25px;
+      font-weight: bolder;
+    }
+
+    hr {
+      background-color: #f2803d;
+      height: 1px;
+      border: none;
+      width: 50%;
+      margin: 15px auto;
+    }
+
+    .ovr-stat {
+      font-size: 40px;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+  </style>
+    <script>
+        const playPauseButtons = document.querySelectorAll('.playPauseButton');
+      
+      playPauseButtons.forEach(button => {
+        const audioId = button.getAttribute('data-audio-id');
+        const audioPlayer = document.getElementById(audioId);
+    
+        button.addEventListener('click', () => {
+          if (audioPlayer.paused) {
+            audioPlayer.play();
+            button.textContent = '▐▐';
+            button.style.height = "60px"
+          } else {
+            audioPlayer.pause();
+            button.textContent = '▶︎';
+            button.style.height = "60px"
+            
+          }
+        });
+      });
+    </script>
+</body>
+</html>
